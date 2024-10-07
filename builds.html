@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="techguy16, et al">
+    <meta name="keywords" content="BetaWeb, beta, beta collection, beta archive, windows beta, pre release, longhorn">
+    <meta name="description"
+        content="Browse BetaWeb's library of free to download betas, including Windows. All free, no sign up required!">
+    <title>BetaWeb - Beta library</title>
+
+    <link href="style.css" rel="stylesheet">
+    <style>
+        /* Table styling */
+        #builds {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        #builds th,
+        #builds td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        #builds th {
+            background-color: #f2f2f2;
+        }
+
+        /* Dropdown container */
+        #dropdown-container {
+            margin-bottom: 20px;
+        }
+
+        /* Dropdown with icon */
+        #beta-selector-container,
+        #category-selector-container {
+            position: relative;
+            width: 290px;
+        }
+
+        #beta-selector,
+        #category-selector {
+            width: 100%;
+            height: 40px;
+            font-size: 16px;
+            padding-left: 40px;
+            background: url('img/default-icon.png') no-repeat 10px center;
+            background-size: 24px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #beta-selector option {
+            padding-left: 40px;
+            height: 40px;
+        }
+
+
+        /* Other download options styling */
+        #other-download-options {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="navbar">
+        <table>
+            <tr>
+                <th><a href='index.html' id="home" style="color:blue;">BetaWeb</a></th>
+                <td><a href='builds.html'>Beta library</a></th>
+            </tr>
+        </table>
+    </div>
+
+    <div id="main">
+        <div id="dropdown-container" style="overflow-x: auto;">
+            <table>
+                <tr>
+                    <td>
+                        <div id="category-selector-container">
+                            Category:
+                            <select id="category-selector"></select>
+                        </div>
+                    </td>
+                    <td>
+                        <div id="beta-selector-container">
+                            Software:
+                            <select id="beta-selector"></select>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div style="overflow-x: auto;">
+        <table id="builds">
+            <thead>
+                <tr>
+                    <th>Channel</th>
+                    <th>Build</th>
+                    <th>Compiled Date</th>
+                    <th>Downloads</th>
+                </tr>
+            </thead>
+            <tbody id="build-list"></tbody>
+        </table></div>
+
+        <div id="download-modal" title="Downloads">
+            <div class="modal-content" style="text-align:center;"></div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="viewer.js"></script>
+</body>
+
+</html>
