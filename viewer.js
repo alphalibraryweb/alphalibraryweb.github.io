@@ -64,9 +64,6 @@ $(document).ready(function () {
             const iconUrl = `${iconBaseUrl}category/${selectedCategory.toLowerCase().replace(/\s+/g, '_')}.png`;
             $(this).css('background-image', `url('${iconUrl}')`);
         });
-    
-        // Trigger the initial change to set the default icon
-        $categoryDropdown.trigger('change');
     }
     
 
