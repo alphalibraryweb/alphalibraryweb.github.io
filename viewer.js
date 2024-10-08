@@ -22,7 +22,12 @@ $(document).ready(function () {
             { display_name: "Windows 11 (Original Release)", save_name: "win11_original" }
         ],
         "Windows (unreleased)": [
-            { display_name: "Windows Neptune", save_name: "winneptune" }
+            { display_name: "Windows Nashville", save_name: "winnashville" },
+            { display_name: "Windows Neptune", save_name: "winneptune" },
+            { display_name: "Windows 10X", save_name: "win10x" }
+        ],
+        "Windows Insider": [
+            { display_name: "Cobalt", save_name: "cobalt" }
         ]
     };
 
