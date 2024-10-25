@@ -9,7 +9,14 @@
     <meta name="description"
         content="Browse BetaWeb's library of free to download betas, including Windows. All free, no sign up required!">
     <title>BetaWeb - Beta library</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JC2D49JR80"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
+        gtag('config', 'G-JC2D49JR80');
+    </script>
     <link href="style.css" rel="stylesheet">
     <style>
         /* Table styling */
@@ -98,17 +105,18 @@
             </table>
         </div>
         <div style="overflow-x: auto;">
-        <table id="builds">
-            <thead>
-                <tr>
-                    <th>Channel</th>
-                    <th>Build</th>
-                    <th>Compiled Date</th>
-                    <th>Downloads</th>
-                </tr>
-            </thead>
-            <tbody id="build-list"></tbody>
-        </table></div>
+            <table id="builds">
+                <thead>
+                    <tr>
+                        <th>Channel</th>
+                        <th>Build</th>
+                        <th>Compiled Date</th>
+                        <th>Downloads</th>
+                    </tr>
+                </thead>
+                <tbody id="build-list"></tbody>
+            </table>
+        </div>
 
         <div id="download-modal" title="Downloads">
             <div class="modal-content" style="text-align:center;"></div>
