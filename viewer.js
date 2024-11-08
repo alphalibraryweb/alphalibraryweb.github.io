@@ -27,7 +27,8 @@ $(document).ready(function () {
             { display_name: "Windows 10X", save_name: "win10x" }
         ],
         "Windows Insider": [
-            { display_name: "Cobalt", save_name: "cobalt" }
+            { display_name: "Cobalt", save_name: "cobalt" },
+            { display_name: "Nickel", save_name: "nickel" }
         ]
     };
 
