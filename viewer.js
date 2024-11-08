@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    const baseUrl = "https://betawebproject.github.io/database/betas/";
+    const baseUrl = "https://alphalibraryweb.github.io/database/betas/";
     const iconBaseUrl = "img/";
 
     // Updated list with categories and versions
