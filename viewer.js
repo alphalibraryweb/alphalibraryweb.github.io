@@ -48,22 +48,19 @@ $(document).ready(function () {
             // Append the option to the dropdown
             $categoryDropdown.append(option);
         });
-    
+
         // Trigger the versions dropdown population when a category is selected
         $categoryDropdown.on('change', function () {
             const selectedCategory = $(this).val();
             populateVersionDropdown(categories[selectedCategory]);
         });
-    
         // Trigger the initial population
-        $categoryDropdown.trigger('change');
-    
-        // Set the default icon for the selected option
         $categoryDropdown.on('change', function () {
             const selectedCategory = $(this).val();
             const iconUrl = `${iconBaseUrl}category/${selectedCategory.toLowerCase().replace(/\s+/g, '_')}.png`;
             $(this).css('background-image', `url('${iconUrl}')`);
         });
+        $categoryDropdown.trigger('change');
     }
     
 

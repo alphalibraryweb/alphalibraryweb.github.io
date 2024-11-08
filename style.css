@@ -52,3 +52,8 @@ body {
     background-color:lightgreen;
     cursor:pointer;
 }
+#navbar table{width:100%;}
+#navbar table tr th {width:108px;}
+#navbar table tr td {
+    float:right;
+}
