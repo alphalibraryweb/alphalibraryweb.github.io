@@ -56,4 +56,5 @@ body {
 #navbar table tr th {width:108px;}
 #navbar table tr td {
     float:right;
+    padding-left:10px;
 }
