@@ -84,7 +84,7 @@ $(document).ready(function () {
         // Set the default icon for the selected option
         $dropdown.on('change', function () {
             const selectedVersion = $(this).find('option:selected').val();
-            const iconUrl = `url('${iconBaseUrl}${selectedVersion}.png')`;
+            const iconUrl = `url('${iconBaseUrl}os/${selectedVersion}.png')`;
             $(this).css('background-image', iconUrl);
         });
 
