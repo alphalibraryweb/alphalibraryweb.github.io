@@ -125,7 +125,6 @@ $(document).ready(function() {
 		$categoryDropdown.trigger('change');
 	}
 
-
 	// Populate the versions dropdown based on selected category
 	function populateVersionDropdown(versions) {
 		const $dropdown = $('#beta-selector');
@@ -231,6 +230,19 @@ $(document).ready(function() {
                     <p style="width: 20px; margin-right: 10px;">${iconUrl}</p></td><td>
                     <a href="${downloads[service]}" target="_blank" class="download-btn">${displayName}</a></td></tr></table>
                 </div>`;
+			}
+
+			// Check for download variants (services with "-")
+			if (service.includes('-')) {
+				const [baseService, variant] = service.split('-');
+				if (downloads[service]) {
+					const iconUrl = getCountryIcon(baseService);
+					const displayName = `${getDisplayName(baseService)} - ${variant}`;
+					content += `<div><table id="dlt"><tr><td>
+                        <p style="width: 20px; margin-right: 10px;">${iconUrl}</p></td><td>
+                        <a href="${downloads[service]}" target="_blank" class="download-btn">${displayName}</a></td></tr></table>
+                    </div>`;
+				}
 			}
 		});
 
