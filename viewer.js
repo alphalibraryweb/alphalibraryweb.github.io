@@ -88,8 +88,7 @@ $(document).ready(function() {
                     }
                 ],
                 "Community Windows Versions": [{
-                        display_name: "OpenXP, save_name: "
-                        openxp " }
+                        display_name: "OpenXP, save_name: "openxp" }
                     ]
                 };
 
