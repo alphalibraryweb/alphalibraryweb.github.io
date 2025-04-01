@@ -220,35 +220,66 @@ $(document).ready(function() {
 
 	function displayDownloadOptions(downloads) {
 		let content = '';
-		const order = ["internetarchive", "googledrive", "onedrive", "mega"];
+		const groupedDownloads = {
+			standard: [], // For services without variants
+			variants: {} // For services with variants
+		};
 
-		order.forEach(service => {
-			if (downloads[service]) {
-				const iconUrl = getCountryIcon(service);
-				const displayName = getDisplayName(service);
-				content += `<div><table id="dlt"><tr><td>
-                    <p style="width: 20px; margin-right: 10px;">${iconUrl}</p></td><td>
-                    <a href="${downloads[service]}" target="_blank" class="download-btn">${displayName}</a></td></tr></table>
-                </div>`;
-			}
+		// Step 1: Group downloads by standard vs variants
+		for (const key in downloads) {
+			const [baseService, variant] = key.split('-');
 
-			// Check for download variants (services with "-")
-			if (service.includes('-')) {
-				const [baseService, variant] = service.split('-');
-				if (downloads[service]) {
-					const iconUrl = getCountryIcon(baseService);
-					const displayName = `${getDisplayName(baseService)} - ${variant}`;
-					content += `<div><table id="dlt"><tr><td>
-                        <p style="width: 20px; margin-right: 10px;">${iconUrl}</p></td><td>
-                        <a href="${downloads[service]}" target="_blank" class="download-btn">${displayName}</a></td></tr></table>
-                    </div>`;
+			// If there's a variant, group it under the variants section
+			if (variant) {
+				if (!groupedDownloads.variants[variant]) {
+					groupedDownloads.variants[variant] = [];
 				}
+				groupedDownloads.variants[variant].push({
+					baseService,
+					url: downloads[key]
+				});
+			} else {
+				// Otherwise, it's a standard download (without a variant)
+				groupedDownloads.standard.push({
+					baseService,
+					url: downloads[key]
+				});
 			}
-		});
+		}
 
+		// Step 2: Display standard downloads
+		if (groupedDownloads.standard.length > 0) {
+			groupedDownloads.standard.forEach(download => {
+				const iconUrl = getCountryIcon(download.baseService);
+				const displayName = getDisplayName(download.baseService);
+				content += `<div><table id="dlt"><tr><td>
+                <p style="width: 20px; margin-right: 10px;">${iconUrl}</p></td><td>
+                <a href="${download.url}" target="_blank" class="download-btn">${displayName} (Standard Download)</a></td></tr></table>
+            </div>`;
+			});
+		}
+
+		// Step 3: Add a separator for variants
+		content += '<hr>';
+
+		// Step 4: Display variant downloads
+		for (const variant in groupedDownloads.variants) {
+			content += `<h3>${variant}</h3>`;
+			groupedDownloads.variants[variant].forEach(download => {
+				const iconUrl = getCountryIcon(download.baseService);
+				const displayName = getDisplayName(download.baseService);
+				content += `<div><table id="dlt"><tr><td>
+                <p style="width: 20px; margin-right: 10px;">${iconUrl}</p></td><td>
+                <a href="${download.url}" target="_blank" class="download-btn">${displayName} - ${variant}</a></td></tr></table>
+            </div>`;
+			});
+		}
+
+		// Step 5: Inject the content into the modal and open it
 		$('#download-modal .modal-content').html(content);
 		$('#download-modal').dialog("open");
 	}
+
 
 	// Update the selected version display with icon and text
 	function updateSelectedVersion(displayName, saveName) {
