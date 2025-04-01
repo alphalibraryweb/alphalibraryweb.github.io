@@ -255,12 +255,9 @@ $(document).ready(function() {
 				content += `<div><table id="dlt"><tr><td>
                 <p style="width: 20px; margin-right: 10px;">${iconUrl}</p></td><td>
                 <a href="${download.url}" target="_blank" class="download-btn">${displayName} (Standard Download)</a></td></tr></table>
-            </div>`;
+            </div><hr>`;
 			});
 		}
-
-		// Step 3: Add a separator for variants
-		content += '<hr>';
 
 		// Step 4: Display variant downloads
 		for (const variant in groupedDownloads.variants) {
@@ -270,8 +267,8 @@ $(document).ready(function() {
 				const displayName = getDisplayName(download.baseService);
 				content += `<div><table id="dlt"><tr><td>
                 <p style="width: 20px; margin-right: 10px;">${iconUrl}</p></td><td>
-                <a href="${download.url}" target="_blank" class="download-btn">${displayName} - ${variant}</a></td></tr></table>
-            </div>`;
+                <a href="${download.url}" target="_blank" class="download-btn">${displayName}</a></td></tr></table>
+            </div><hr>`;
 			});
 		}
 
