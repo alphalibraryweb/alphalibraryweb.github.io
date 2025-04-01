@@ -254,7 +254,7 @@ $(document).ready(function() {
 				const displayName = getDisplayName(download.baseService);
 				content += `<div><table id="dlt"><tr><td>
                 <p style="width: 20px; margin-right: 10px;">${iconUrl}</p></td><td>
-                <a href="${download.url}" target="_blank" class="download-btn">${displayName} (Standard Download)</a></td></tr></table>
+                <a href="${download.url}" target="_blank" class="download-btn">${displayName}</a></td></tr></table>
             </div><br><hr>`;
 			});
 		}
