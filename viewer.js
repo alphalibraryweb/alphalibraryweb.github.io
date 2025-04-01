@@ -29,6 +29,9 @@ $(document).ready(function () {
         "Windows Insider": [
             { display_name: "Cobalt", save_name: "cobalt" },
             { display_name: "Nickel", save_name: "nickel" }
+        ],
+        "Community Windows Versions": [
+            { display_name: "OpenXP, save_name: "openxp" }
         ]
     };
 
