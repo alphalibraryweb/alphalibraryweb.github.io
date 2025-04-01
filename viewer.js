@@ -255,20 +255,20 @@ $(document).ready(function() {
 				content += `<div><table id="dlt"><tr><td>
                 <p style="width: 20px; margin-right: 10px;">${iconUrl}</p></td><td>
                 <a href="${download.url}" target="_blank" class="download-btn">${displayName} (Standard Download)</a></td></tr></table>
-            </div><hr>`;
+            </div><br><hr>`;
 			});
 		}
 
 		// Step 4: Display variant downloads
 		for (const variant in groupedDownloads.variants) {
-			content += `<h3>${variant}</h3>`;
+			content += `<h3 style='margin-bottom:0px;'>${variant}</h3>`;
 			groupedDownloads.variants[variant].forEach(download => {
 				const iconUrl = getCountryIcon(download.baseService);
 				const displayName = getDisplayName(download.baseService);
 				content += `<div><table id="dlt"><tr><td>
                 <p style="width: 20px; margin-right: 10px;">${iconUrl}</p></td><td>
                 <a href="${download.url}" target="_blank" class="download-btn">${displayName}</a></td></tr></table>
-            </div><hr>`;
+            </div><br><hr>`;
 			});
 		}
 
