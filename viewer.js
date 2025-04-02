@@ -259,7 +259,7 @@ $(document).ready(function() {
 				content += `<div><table id="dlt"><tr><td>
                 <p style="width: 20px; margin-right: 10px;">${iconUrl}</p></td><td>
                 <a href="${download.url}" target="_blank" class="download-btn">${displayName}</a></td></tr></table>
-            </div><br>`;
+            </div>`;
 			});
 			content += "<hr>";
 		}
@@ -273,7 +273,7 @@ $(document).ready(function() {
 				content += `<div><table id="dlt"><tr><td>
                 <p style="width: 20px; margin-right: 10px;">${iconUrl}</p></td><td>
                 <a href="${download.url}" target="_blank" class="download-btn">${displayName}</a></td></tr></table>
-            </div><br>`;
+            </div>`;
 			});
 			content += "<hr>";
 		}
