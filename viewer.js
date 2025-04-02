@@ -180,7 +180,7 @@ $(document).ready(function() {
 
 	// Preferred download link order and services with country icons
 	function getPreferredDownloadLink(downloads) {
-		const order = ["internetarchive", "googledrive", "onedrive", "mega"];
+		const order = ["internetarchive", "googledrive", "proton", "onedrive", "mega"];
 		for (const key of order) {
 			if (downloads[key]) return {
 				service: key,
@@ -198,6 +198,8 @@ $(document).ready(function() {
 				return '\u{1F1FA}\u{1F1F8}'; // USA icon
 			case 'mega':
 				return '\u{1F1F3}\u{1F1FF}'; // NZ icon
+			case 'protondrive':
+				return '\u{1F1E8}\u{1F1ED}'; // Switzerland icon
 			default:
 				return '';
 		}
@@ -213,6 +215,8 @@ $(document).ready(function() {
 				return 'OneDrive';
 			case 'mega':
 				return 'Mega.nz';
+			case 'protondrive':
+				return 'Proton Drive';
 			default:
 				return service;
 		}
