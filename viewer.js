@@ -261,7 +261,7 @@ $(document).ready(function() {
                 <a href="${download.url}" target="_blank" class="download-btn">${displayName}</a></td></tr></table>
             </div>`;
 			});
-			content += "<hr>";
+			content += "<br><hr>";
 		}
 
 		// Step 4: Display variant downloads
@@ -275,7 +275,7 @@ $(document).ready(function() {
                 <a href="${download.url}" target="_blank" class="download-btn">${displayName}</a></td></tr></table>
             </div>`;
 			});
-			content += "<hr>";
+			content += "<br><hr>";
 		}
 
 		// Step 5: Inject the content into the modal and open it
