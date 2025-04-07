@@ -303,7 +303,7 @@ $(document).ready(function() {
 	$('#download-modal').dialog({
 		autoOpen: false,
 		modal: true,
-		width: 400,
+		width: 320,
 		height: 400
 	});
 
