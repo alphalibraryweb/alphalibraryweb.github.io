@@ -88,9 +88,13 @@ $(document).ready(function() {
 			}
 		],
 		"Community Windows Versions": [{
-			display_name: "OpenXP",
-			save_name: "openxp"
-		}]
+			    display_name: "OpenXP",
+			    save_name: "openxp"
+		    },
+            {   
+                display_name: "Open11",
+                save_name: "open11"
+            }]
 	};
 
 	// Populate the categories dropdown
@@ -180,7 +184,7 @@ $(document).ready(function() {
 
 	// Preferred download link order and services with country icons
 	function getPreferredDownloadLink(downloads) {
-		const order = ["internetarchive", "googledrive", "proton", "onedrive", "mega"];
+		const order = ["internetarchive", "terabox", "googledrive", "proton", "onedrive", "mega"];
 		for (const key of order) {
 			if (downloads[key]) return {
 				service: key,
@@ -200,6 +204,8 @@ $(document).ready(function() {
 				return '\u{1F1F3}\u{1F1FF}'; // NZ icon
 			case 'protondrive':
 				return '\u{1F1E8}\u{1F1ED}'; // Switzerland icon
+            case 'terabox':
+                return '\u{1F1EF}\u{1F1F5}';
 			default:
 				return '';
 		}
@@ -217,6 +223,8 @@ $(document).ready(function() {
 				return 'Mega.nz';
 			case 'protondrive':
 				return 'Proton Drive';
+            case 'terabox':
+                return 'TeraBox';
 			default:
 				return service;
 		}
