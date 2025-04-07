@@ -204,8 +204,8 @@ $(document).ready(function() {
 				return '\u{1F1F3}\u{1F1FF}'; // NZ icon
 			case 'protondrive':
 				return '\u{1F1E8}\u{1F1ED}'; // Switzerland icon
-            case 'terabox':
-                return '\u{1F1EF}\u{1F1F5}';
+           		case 'terabox':
+                		return '\u{1F1EF}\u{1F1F5}';
 			default:
 				return '';
 		}
@@ -223,8 +223,8 @@ $(document).ready(function() {
 				return 'Mega.nz';
 			case 'protondrive':
 				return 'Proton Drive';
-            case 'terabox':
-                return 'TeraBox';
+            		case 'terabox':
+                		return 'TeraBox';
 			default:
 				return service;
 		}
