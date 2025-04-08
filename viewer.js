@@ -1,100 +1,104 @@
-$(document).ready(function() {
+$(document).ready(function () {
 	const baseUrl = "https://alphalibraryweb.github.io/database/betas/";
 	const iconBaseUrl = "img/";
 
 	// Updated list with categories and versions
 	const categories = {
 		"Windows": [{
-				display_name: "Windows 1.0",
-				save_name: "win1"
-			},
-			{
-				display_name: "Windows 2.x",
-				save_name: "win2"
-			},
-			{
-				display_name: "Windows 3.0",
-				save_name: "win3"
-			},
-			{
-				display_name: "Windows 3.1x",
-				save_name: "win31"
-			},
-			{
-				display_name: "Windows 95",
-				save_name: "win95"
-			},
-			{
-				display_name: "Windows 98",
-				save_name: "win98"
-			},
-			{
-				display_name: "Windows 2000",
-				save_name: "win2000"
-			},
-			{
-				display_name: "Windows ME",
-				save_name: "winme"
-			},
-			{
-				display_name: "Windows XP",
-				save_name: "winxp"
-			},
-			{
-				display_name: "Windows Vista",
-				save_name: "winvista"
-			},
-			{
-				display_name: "Windows 7",
-				save_name: "win7"
-			},
-			{
-				display_name: "Windows 8",
-				save_name: "win8"
-			},
-			{
-				display_name: "Windows 8.1",
-				save_name: "win81"
-			},
-			{
-				display_name: "Windows 10 (Original Release)",
-				save_name: "win10_original"
-			},
-			{
-				display_name: "Windows 11 (Original Release)",
-				save_name: "win11_original"
-			}
+			display_name: "Windows 1.0",
+			save_name: "win1"
+		},
+		{
+			display_name: "Windows 2.x",
+			save_name: "win2"
+		},
+		{
+			display_name: "Windows 3.0",
+			save_name: "win3"
+		},
+		{
+			display_name: "Windows 3.1x",
+			save_name: "win31"
+		},
+		{
+			display_name: "Windows 95",
+			save_name: "win95"
+		},
+		{
+			display_name: "Windows 98",
+			save_name: "win98"
+		},
+		{
+			display_name: "Windows 2000",
+			save_name: "win2000"
+		},
+		{
+			display_name: "Windows ME",
+			save_name: "winme"
+		},
+		{
+			display_name: "Windows XP",
+			save_name: "winxp"
+		},
+		{
+			display_name: "Windows Vista",
+			save_name: "winvista"
+		},
+		{
+			display_name: "Windows 7",
+			save_name: "win7"
+		},
+		{
+			display_name: "Windows 8",
+			save_name: "win8"
+		},
+		{
+			display_name: "Windows 8.1",
+			save_name: "win81"
+		},
+		{
+			display_name: "Windows 10 (Original Release)",
+			save_name: "win10_original"
+		},
+		{
+			display_name: "Windows 11 (Original Release)",
+			save_name: "win11_original"
+		}
 		],
 		"Windows (unreleased)": [{
-				display_name: "Windows Nashville",
-				save_name: "winnashville"
-			},
-			{
-				display_name: "Windows Neptune",
-				save_name: "winneptune"
-			},
-			{
-				display_name: "Windows 10X",
-				save_name: "win10x"
-			}
+			display_name: "Windows Nashville",
+			save_name: "winnashville"
+		},
+		{
+			display_name: "Windows Neptune",
+			save_name: "winneptune"
+		},
+		{
+			display_name: "Windows 10X",
+			save_name: "win10x"
+		}
 		],
 		"Windows Insider": [{
-				display_name: "Cobalt",
-				save_name: "cobalt"
-			},
-			{
-				display_name: "Nickel",
-				save_name: "nickel"
-			}
+			display_name: "Cobalt",
+			save_name: "cobalt"
+		},
+		{
+			display_name: "Nickel",
+			save_name: "nickel"
+		}
 		],
 		"Community Windows Versions": [{
-			    display_name: "OpenXP",
-			    save_name: "openxp"
-		    },
-            {   
-                display_name: "Open11",
-                save_name: "open11"
-            }]
+			display_name: "OpenXP",
+			save_name: "openxp"
+		},
+		{
+			display_name: "Open11",
+			save_name: "open11"
+		},
+		{
+			display_name: "Windows 7 SP2",
+			save_name: "win7sp2"
+		}]
 	};
 
 	// Populate the categories dropdown
@@ -116,12 +120,12 @@ $(document).ready(function() {
 		});
 
 		// Trigger the versions dropdown population when a category is selected
-		$categoryDropdown.on('change', function() {
+		$categoryDropdown.on('change', function () {
 			const selectedCategory = $(this).val();
 			populateVersionDropdown(categories[selectedCategory]);
 		});
 		// Trigger the initial population
-		$categoryDropdown.on('change', function() {
+		$categoryDropdown.on('change', function () {
 			const selectedCategory = $(this).val();
 			const iconUrl = `${iconBaseUrl}category/${selectedCategory.toLowerCase().replace(/\s+/g, '_')}.png`;
 			$(this).css('background-image', `url('${iconUrl}')`);
@@ -146,7 +150,7 @@ $(document).ready(function() {
 		});
 
 		// Set the default icon for the selected option
-		$dropdown.on('change', function() {
+		$dropdown.on('change', function () {
 			const selectedVersion = $(this).find('option:selected').val();
 			const iconUrl = `url('${iconBaseUrl}os/${selectedVersion}.png')`;
 			$(this).css('background-image', iconUrl);
@@ -161,7 +165,7 @@ $(document).ready(function() {
 		const fileUrl = `${baseUrl}${saveName}.json`;
 		$('#build-list').empty(); // Clear the table content before loading new data
 
-		$.getJSON(fileUrl, function(data) {
+		$.getJSON(fileUrl, function (data) {
 			data.forEach(build => {
 				const downloads = build.downloads || {};
 				let downloadButton = `<span>No downloads available</span>`;
@@ -204,8 +208,8 @@ $(document).ready(function() {
 				return '\u{1F1F3}\u{1F1FF}'; // NZ icon
 			case 'protondrive':
 				return '\u{1F1E8}\u{1F1ED}'; // Switzerland icon
-           		case 'terabox':
-                		return '\u{1F1EF}\u{1F1F5}';
+			case 'terabox':
+				return '\u{1F1EF}\u{1F1F5}';
 			default:
 				return '';
 		}
@@ -223,8 +227,8 @@ $(document).ready(function() {
 				return 'Mega.nz';
 			case 'protondrive':
 				return 'Proton Drive';
-            		case 'terabox':
-                		return 'TeraBox';
+			case 'terabox':
+				return 'TeraBox';
 			default:
 				return service;
 		}
@@ -308,7 +312,7 @@ $(document).ready(function() {
 	});
 
 	// Event listener for dropdown change
-	$('#beta-selector').on('change', function() {
+	$('#beta-selector').on('change', function () {
 		const selectedSaveName = $(this).val();
 		const selectedPage = categories[$('#category-selector').val()].find(page => page.save_name === selectedSaveName);
 		if (selectedPage) {
@@ -318,7 +322,7 @@ $(document).ready(function() {
 	});
 
 	// Event listener for opening the modal with download options
-	$(document).on('click', '.open-modal-btn', function() {
+	$(document).on('click', '.open-modal-btn', function () {
 		const downloads = $(this).data('downloads');
 		displayDownloadOptions(downloads);
 	});
