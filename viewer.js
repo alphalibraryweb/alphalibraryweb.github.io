@@ -96,6 +96,10 @@ $(document).ready(function () {
 			save_name: "open11"
 		},
 		{
+			display_name: "OpenNT 5",
+			save_name: "opennt5"
+		},
+		{
 			display_name: "Windows 7 SP2",
 			save_name: "win7sp2"
 		}]
