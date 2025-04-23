@@ -214,6 +214,8 @@ $(document).ready(function () {
 				return '\u{1F1E8}\u{1F1ED}'; // Switzerland icon
 			case 'terabox':
 				return '\u{1F1EF}\u{1F1F5}';
+			case 'pixeldrain':
+				return '\u{1F1EB}\u{1F1EE}';
 			default:
 				return '';
 		}
