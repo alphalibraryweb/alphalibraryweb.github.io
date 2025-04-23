@@ -235,6 +235,8 @@ $(document).ready(function () {
 				return 'Proton Drive';
 			case 'terabox':
 				return 'TeraBox';
+			case 'pixeldrain':
+				return 'Pixeldrain';
 			default:
 				return service;
 		}
