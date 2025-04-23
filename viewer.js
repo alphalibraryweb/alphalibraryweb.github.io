@@ -192,7 +192,7 @@ $(document).ready(function () {
 
 	// Preferred download link order and services with country icons
 	function getPreferredDownloadLink(downloads) {
-		const order = ["internetarchive", "terabox", "googledrive", "proton", "onedrive", "mega"];
+		const order = ["internetarchive", "terabox", "pixeldrain", "googledrive", "proton", "onedrive", "mega"];
 		for (const key of order) {
 			if (downloads[key]) return {
 				service: key,
