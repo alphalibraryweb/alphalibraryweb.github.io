@@ -102,6 +102,10 @@ $(document).ready(function () {
 		{
 			display_name: "Windows 7 SP2",
 			save_name: "win7sp2"
+		},
+		{
+			display_name: "DokiNT",
+			save_name: "dokint"
 		}]
 	};
 
